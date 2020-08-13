@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <meta charset="utf-8">
+  <meta name="keywords" content="Tallman's,Good,Neighbor,Pharmacy,Prescriptions,Hallmark,Gold,Crown,keepsake,ornaments,wallawalladrazenphotos,refill,free,delivery,home,accents,gifts,bath,body,health,care,medication, medicine, over,the,counter,customer,service, competitive, pricing, plus, accept, most, insurances" />
+  <meta name="description" content="A Good Neighbor Pharmacy that is locally operated and dedicated to customer service. We are an official Hallmark Gold Crown store. We offer many products and over the counter medications. Dedicated to customer service. Competitive pricing plus we accept most insurances. Tallman's has been around since 1898." />
+  <meta name="robots" content="nofollow">
+  <head>
+    <title>Tallmans Hallmark Pharmacy</title>
+    <meta name="viewport" content="width=device-width initial-scale=1"/>
+    <!-- Less stylesheet -->
+    <link href="styles.css" type="text/css" rel="stylesheet">
+    <!-- Reference Bootstrap grid classes -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <!--  <script type="text/javascript" src="products.json"></script> -->
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Reference jQuery Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Reference Bootstrap JavaScript File -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- Local less compiler.  Only use for testing purposes since it doesn't work in Chrome or Edge.  Compiles above Less file into browser readable CSS -->
+    <script type="text/javascript" src="lessCompiler.js"></script>
+    <!--<script type="text/javascript" src="jquery-3.3.1.min.js"></script>-->
+    <script type="text/javascript" src="mustache.js"></script>
+    <!-- Script containing our data wrapped in a document.ready function -->
+    <script type="text/javascript" src="data.js"></script>
+  </head>
+
+  <body>
+    <script id="topNavigation" type="x-tmpl-mustache">
+      <div class="d-flex">
+        {{#item}}
+          <div class="{{class1}} wide">
+            <li class="nav-item{{class3}}">
+                <a class="nav-link" href="{{link}}">{{name1}}{{{name2}}}{{name3}}</a>
+            </li>
+          </div>
+        {{/item}}
+      </div>
+    </script>
+    <script id="topNavigation2" type="x-tmpl-mustache">
+      <div class="d-flex flex-column">
+        {{#item}}
+          <div class="{{class2}} narrow">
+            <li class="nav-item">
+                <a class="nav-link" href="{{link}}">{{name1}}{{{name2}}}{{name3}}</a>
+            </li>
+          </div>
+        {{/item}}
+      </div>
+    </script>
+<!--     <script>
+      $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();
+      });
+    </script> -->
+    <main>
+      <div class="page-wrapper" style="background-color: transparent; margin-bottom: 0px;">
+        <div class="container-fluid"><!--Top/Header-->
+          <div class="row">
+            <div class="col-md-12" style="padding: 0px;">
+              <img class="headerImage1"src="images/headerImage1.jpg" alt="Tallmans, in the store or to your door we deliver">
+              <img class="headerImage2" src="images/headerImage2.jpg" alt="Tallmans, in the store or to your door we deliver">
+            </div>
+          </div>
+        </div>
+        <!-- Responsive top navigation bar -->
+        <nav id="mainNavigation" class="navbar navbar-expand-md navbar-dark">
+          <button class="navbar-toggler" style="margin: auto;" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button> 
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <!-- Mustache renders the top navigation l inks in the below unordered list --> 
+            <div class="wide"  style="width: 100%;">
+              <ul class="navbar-nav" id="render_topLinks"></ul>
+            </div>
+            <div class="narrow">
+              <ul class="navbar-nav narrow" id="render_topLinks2"></ul>
+            </div>
+          </div>
+        </nav>
+        <div class="d-flex social">
+          <div class="p-1">
+            <div class="dropdown show">
+              <a id="dropdownMenuLink" data-toggle="dropdown">
+                <icon class="fa fa-clock-o">
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" role="menu">
+                <h4 style="padding-left: 10px; font-weight: bold;">Hours:</h4>
+                <ul class="dropdown-item hours">
+                  <li>Monday - Friday: 9:00am - 5:30pm</li>
+                  <li>Saturday: 9:00am - 3:00pm</li>
+                  <li>Sunday: CLOSED</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="p-1">
+            <div class="dropdown show">
+              <a id="dropdownMenuLink" data-toggle="dropdown">
+                <icon class="fa fa-phone">
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" role="menu">
+                <h4 style="padding-left: 10px; font-weight: bold;">Call:</h4>
+                <a class="dropdown-item phone" href="tel:509-525-1010">(509) 525-1010</a>
+              </div>
+            </div>
+          </div>
+          <div class="p-1">
+            <div class="dropdown show">
+               <a id="dropdownMenuLink" data-toggle="dropdown" >
+                <icon class="fa fa-map-o">
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" role="menu">
+                <h4 style="padding-left: 10px; font-weight: bold;">Find Us:</h4>
+                <ul class="dropdown-item map" style="text-align: center; list-style-type: none;">
+                  <li >4 West Main St</li>
+                  <li>Walla Walla, WA 99362</li>
+                </ul>
+                <a class="dropdown-item map" target="blank" href="https://www.google.com/maps/place/Tallmans+Pharmacy/@46.0667952,-118.3398935,17z/data=!3m1!4b1!4m5!3m4!1s0x54a26a636e6ebdbd:0xe12d796034456724!8m2!3d46.0667952!4d-118.3398935" style="text-align: center;">Map</a>
+              </div>
+            </div>
+          </div>
+          <div class="m-auto p-1">
+            <h6 style="margin: 0px;"><a target="blank" href="https://www.mygnp.com/pharmacies/tallmans-pharmacy-walla-walla-wa-99362/#prescription" class="gnpText">Refill &rx;</a></h6>
+          </div>
+          <div class="p-1">
+            <a target="blank" href="https://www.facebook.com/tallmanspharmacy/" class="fa fa-facebook faHov"></a>
+          </div>
+          <div class="p-1">  
+            <a target="blank" href="https://twitter.com/TallmansP/" class="fa fa-twitter faHov"></a>
+          </div>
+          <div class="p-1">
+            <a target="blank" href="https://www.instagram.com/tallmans_pharmacy/" class="fa fa-instagram faHov"></a>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-7" style="padding: 0px;">
+              <img class="secondaryImage" src="images/secondaryImage.jpg" alt="Tallmans Pharmacy">
+              <form>
+                <button class="pharmButton narrow" formaction="delivery.html"> Pharmacy - Free Delivery</button>
+              </form>
+              <form>
+                <button formaction="delivery.html" class="pharmButton wide">Pharmacy - Free Delivery</button>
+              </form>
+            </div>
+            <div class="col-md-5" style="padding: 0px;">
+              <form target="blank">
+                <button type="submit" class="hallmarkButton wide" formaction="https://www.hallmark.com/crown-rewards/">Hallmark <span style="font-family: georgia, serif;">GOLD CROWN</span></button>
+              </form>
+              <!-- <div class="container" style="padding: 0px; margin: 0px;"> -->
+                <a href="shop.html">
+                  
+                  <img class="mainImage wide" src="images/mainImage.jpg" alt="Tallmans Hallmark Section, Click for keepsake ornaments">
+                  <div class="bottom-right wide">New 2020 Ornaments!</div>
+                  <div class="bottom-right2 wide">Shop Now</div>
+                
+                </a>
+              
+                <a href="shop.html">
+                  <img class="mainImage narrow" src="images/mainImage2.jpg" alt="Tallmans Hallmark Section, Click for keepsake ornaments">
+                  <div class="top-right narrow">New 2020 Ornaments!</div>
+                  <div class="top-right2 narrow">Shop Now</div>
+                </a> 
+              <!-- </div> -->
+            </div>
+              <form  target="blank" style="width: 100%;">
+                <button type="submit" class="hallmarkButton narrow" formaction="https://www.hallmark.com/crown-rewards/">Hallmark <span style="font-family: georgia, serif;">GOLD CROWN</span></button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <img class="secondarySubImage" src="images/svg/secondarySubImage.svg" alt="Good neighbor pharmacy">
+        <footer>
+          <a href="aboutUs.html">About Us</a>
+          <span>&nbsp&nbsp&#124&nbsp&nbsp</span>
+          <a href="careers.html">Careers</a>
+          <span>&nbsp&nbsp&#124&nbsp&nbsp</span>
+          <a href="contact.html">Contact</a>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>

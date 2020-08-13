@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8">
+  <meta name="keywords" content="Tallman's - Good,Neighbor,Pharmacy,Prescriptions,Hallmark,Gold,Crown,wallawalladrazenphotos,refill,free,delivery,home,accents,gifts,bath,body,health,care,medication, medicine, over,the,counter,customer,service" />
+  <meta name="description" content="Tallman's - A Good Neighbor Pharmacy that is locally operated and dedicated to customer service. Tallman's has been around since 1898. We are an official Hallmark Gold Crown store and we offer many products and over the counter medications as well. Dedicated to customer service." />
+  <meta name="robots" content="nofollow">
+  <head>
+    <title>Tallmans Hallmark Pharmacy</title>
+    <meta name="viewport" content="width=device-width initial-scale=1"/>
+    <!-- Less stylesheet -->
+    <link href="styles.css" type="text/css" rel="stylesheet">
+    <!-- Reference Bootstrap grid classes -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- Reference jQuery Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Reference Bootstrap JavaScript File -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- Popper JS 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>-->
+    <!-- Local less compiler.  Only use for testing purposes since it doesn't work in Chrome or Edge.  Compiles above Less file into browser readable CSS -->
+    <script type="text/javascript" src="lessCompiler.js"></script>
+    <!--<script type="text/javascript" src="jquery-3.3.1.min.js"></script>-->
+    <script type="text/javascript" src="mustache.js"></script>
+    <!-- Script containing our data wrapped in a document.ready function -->
+    <script type="text/javascript" src="data.js"></script>
+  </head>
+        <body>
+          <script id="topNavigation" type="x-tmpl-mustache">
+            <div class="d-flex">
+              {{#item}}
+                <div class="{{class1}} wide">
+                  <li class="nav-item{{class3}}">
+                      <a class="nav-link" href="{{link}}">{{name1}}{{{name2}}}{{name3}}</a>
+                  </li>
+                </div>
+              {{/item}}
+            </div>
+          </script>
+          <script id="topNavigation2" type="x-tmpl-mustache">
+            <div class="d-flex flex-column">
+              {{#item}}
+                <div class="{{class2}} narrow">
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{link}}">{{name1}}{{{name2}}}{{name3}}</a>
+                  </li>
+                </div>
+              {{/item}}
+            </div>
+          </script>
+          <main>
+            <div class="aboutUsBackground">
+              <div class="container-fluid"><!--Top/Header-->
+                <div class="row">
+                  <div class="col-md-12" style="padding: 0px;">
+                    <img class="headerImage1"src="images/headerImage1.jpg">
+                    <img class="headerImage2" src="images/headerImage2.jpg">
+                  </div>
+                </div>
+              </div>
+              <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>About Us</li>
+              </ul>
+              <!-- Responsive top navigation bar -->
+              <nav id="mainNavigation" class="navbar navbar-expand-md navbar-dark" style="margin-top: -15px;">
+                <button class="navbar-toggler" style="margin: auto;" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                  <span class="navbar-toggler-icon"></span>
+                </button> 
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                  <!-- Mustache renders the top navigation l inks in the below unordered list --> 
+                  <div class="wide"  style="width: 100%;">
+                    <ul class="navbar-nav" id="render_topLinks"></ul>
+                  </div>
+                  <div class="narrow">
+                    <ul class="navbar-nav narrow" id="render_topLinks2"></ul>
+                  </div>
+                </div>
+              </nav>
+              <div class="d-flex social">
+                <div class="flex-fill">
+                  <a target="blank" href="https://www.facebook.com/tallmanspharmacy/" class="fa fa-facebook" style="font-size:32px;"></a>
+                </div>
+                <div class="flex-fill">  
+                  <a target="blank" href="https://twitter.com/TallmansP/" class="fa fa-twitter" style="font-size:32px;"></a>
+                </div>
+                <div class="flex-fill">
+                  <a target="blank" href="https://www.instagram.com/tallmans_pharmacy/" class="fa fa-instagram" style="font-size:32px;"></a>
+                </div>
+              </div>
+              
+              <div class="container-fluid"><!--Top/Header-->
+                <div class="row">
+                  <div class="col-md-12" style="padding: 0px;">
+                    <br><br><br>
+                    <div class="thinSolidLine"><br></div>
+                  </div>
+                </div>
+              </div>
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12" style="padding: 0px;">
+                    <br>
+                    <div class="thickSolidLine"><br></div>
+                  </div>
+                </div>
+              </div>
+              <div class="largeFont">Since 1898</div>
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12" style="padding: 0px;">
+                    <br>
+                    <div class="thinSolidShortLine"><br></div>
+                  </div>
+                </div>
+              </div>
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12" style="padding: 0px;">
+                    <div class="aboutText">Tallman's has been a part of the Walla Walla Valley for over <span id="yearsSince1898"></span> years.</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12" style="padding-left: 5%; padding-right: 5%;">
+                    <br><br>
+                    <div class="aboutText"><u>1930</u></div>
+                    <img src="images/history/storeFront1930.jpg">
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12" style="padding: 0px;">
+                    <div class="aboutText">Locally operated and dedicated to customer satisfaction.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12" style="padding-left: 5%; padding-right: 5%;">
+                    <br><br>
+                    <div class="aboutText"><u>1955</u></div>
+                    <img src="images/history/storeFront1955.jpg">
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12" style="padding: 0px;">
+                    <div class="aboutText">Competitive pricing, plus we accept most insurances.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12" style="padding-left: 5%; padding-right: 5%;">
+                    <br><br>
+                    <div class="aboutText"><u>1994</u></div>
+                    <img src="images/history/storeFront1994.jpg">
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12" style="padding: 0px;">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <br><br>
+                        <img src="images/history/paperClipping1924.jpg">
+                      </div>
+                      <div class="col-md-6">
+                        <br><br><br>
+                        <img src="images/history/paperAd1952.jpg">
+                        <br><br><br>
+                        <img src="images/history/paperAd1900.jpg">
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12" style="padding: 0px;">
+                    <div class="sourceText">Photos and images courtesy of:</div>
+                    <div class="sourceText"><a target="blank" href="http://wallawalladrazanphotos.blogspot.com/">WallaWallaDrazanPhotos.blogspot.com/</a></div>
+                    <div class="sourceText">Bygone Walla Walla - Vintage images of the City & County collected by Joe Drazan.</div>
+                  </div>
+                </div>
+              </div>
+              
+            <!--   <div class="container-fluid">
+                  <div class="row" id="bottomButtons">
+                    <div class="col-md-3" style="padding: 0px; padding-right: 1px;">
+                      <button class="bottomButtons">home accents</button>
+                    </div>
+                    <div class="col-md-1" style="padding: 0px; padding-right: 1px;">
+                      <button class="bottomButtons">gifts</button>
+                    </div>
+                    <div class="col-md-3" style="padding: 0px; padding-right: 1px;">
+                      <button class="bottomButtons">bath &middot body</button>
+                    </div>
+                    <div class="col-md-3" style="padding: 0px; padding-right: 1px;">
+                      <button class="bottomButtons">prescriptions</button>
+                    </div>
+                    <div class="col-md-2" style="padding: 0px;">
+                      <button class="bottomButtons">health care</button>
+                    </div>
+                  </div>
+                </div>-->
+              </div>
+              <footer>
+                <a href="index.html">Home</a>
+                <span>&nbsp&nbsp&#124&nbsp&nbsp</span>
+                <a href="careers.html">Careers</a>
+                <span>&nbsp&nbsp&#124&nbsp&nbsp</span>
+                <a href="contact.html">Contact</a>
+              </footer>
+            </div>
+          </main>
+        </body>
+    </head>
+</html>

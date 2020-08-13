@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <meta charset="utf-8">
+    <meta name="keywords"
+        content="Tallman's,Good,Neighbor,Pharmacy,Prescriptions,Hallmark,Gold,Crown,keepsake,ornaments,wallawalladrazenphotos,refill,free,delivery,home,accents,gifts,bath,body,health,care,medication, medicine, over,the,counter,customer,service, competitive, pricing, plus, accept, most, insurances" />
+    <meta name="description"
+        content="A Good Neighbor Pharmacy that is locally operated and dedicated to customer service. We are an official Hallmark Gold Crown store. We offer many products and over the counter medications. Dedicated to customer service. Competitive pricing plus we accept most insurances. Tallman's has been around since 1898." />
+    <meta name="robots" content="nofollow">
+    <head>
+        <title>Tallmans Hallmark Pharmacy</title>
+        <meta name="viewport" content="width=device-width initial-scale=1" />
+        <!-- Less stylesheet -->
+        <link href="styles.css" type="text/css" rel="stylesheet">
+        <!-- Reference Bootstrap grid classes -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Reference jQuery Library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- Reference Bootstrap JavaScript File -->
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <!-- Local less compiler.  Only use for testing purposes since it doesn't work in Chrome or Edge.  Compiles above Less file into browser readable CSS -->
+        <!-- <script type="text/javascript" src="lessCompiler.js"></script> -->
+        <script type="text/javascript" src="mustache.js"></script>
+        <script type="text/javascript" src="data.js"></script>
+    </head>
+    <body>
+        <button type="button" data-toggle="modal" data-target="#cart" class="showCartButton">Cart</button>
+        <div class="page-wrapper" style="background-color: transparent; margin-top: 2px;">
+            <div class="modal" id="cart" role="dialog">
+                <div class="modal-dialog" id="modalMadness">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+                            <h4 class="modal-title">Cart Items</h4>
+                        </div>
+                        <div class="modal-body cart">
+                            <div id="prodID">
+                                <h3>Cart is empty.</h3>
+                                <!-- cart items to be added here. -->
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- test -->
+            <h2 id="TestingTesting123"></h2>
+            <!-- store -->
+            <div id="shopWrap"></div>
+        </div>
+    </body>
+</html>
+
+<script>//show products on gui
+    const store = document.getElementById('shopWrap')
+    const container = document.createElement('div')
+    container.setAttribute('class', 'shopItems')
+    store.appendChild(container)
+    var request = new XMLHttpRequest()
+    request.open('GET', 'http://localhost:5000/api/products/all', true)
+    request.onload = function () {
+        // Access JSON data
+        var data = JSON.parse(this.response)
+        if (request.status >= 200 && request.status < 400) {
+            data.forEach((prod) => {
+                //create product elements
+                const item = document.createElement('div')
+                item.setAttribute('class', 'item')
+                const price = document.createElement('h3')
+                price.textContent = '$' + (prod.price).toFixed(2)
+                const productName = document.createElement('h3')
+                productName.textContent = prod.prodName
+                const p = document.createElement('p')
+                prod.description = prod.description.substring(0, 300)
+                p.textContent = `${prod.description}...`
+                const picture = document.createElement('img')
+                picture.setAttribute('class', 'itemImage')
+                picture.src = prod.imageFile
+                const button = document.createElement('button')
+                button.innerHTML = 'Add-To-Cart'
+                button.setAttribute('class', 'addToCartButton')
+                //add to cart
+                button.addEventListener("click", function () {
+                    button.disabled = true;
+                    button.innerHTML = 'In Cart'
+                    addToCart(prod, button) 
+                    });
+                const quant = document.createElement('p')
+                quant.textContent = 'Qty in stock: ' + prod.qty
+                container.appendChild(item)
+                item.appendChild(picture)
+                item.appendChild(button)
+                item.appendChild(price)
+                item.appendChild(productName)
+                item.appendChild(p)
+                item.appendChild(quant)
+            })
+        } else {
+            const errorMessage = document.createElement('marquee')
+            errorMessage.textContent = `Gah, it's not working!`
+            app.appendChild(errorMessage)
+        }
+    }
+    request.send()
+</script>
+
+<script>//adding to cart/modal
+    function addToCart(prod, buttonPressed) {
+        const cart = document.getElementById('prodID')
+        //cart.getElementsByTagName('h3')[0].style.visibility = 'hidden';//hidden still takes up the element space
+        cart.getElementsByTagName('h3')[0].innerHTML = '';
+        const newItem = document.createElement('div')
+        const picture = document.createElement('img')
+        picture.setAttribute('class','cartImage')
+        picture.src=prod.imageFile
+        
+        newItem.setAttribute("id",prod.prodID)
+        newItem.setAttribute('class', 'cartItem')
+        newItem.appendChild(picture)
+        newItem.innerHTML = prod.prodName + " $" + prod.price.toFixed(2)
+        cart.appendChild(newItem)
+        
+        
+        const button = document.createElement('button')
+        button.setAttribute("class","cartButton")
+        button.innerHTML = 'Remove-From-Cart'
+        button.setAttribute('class', 'addToCartButton')
+        newItem.appendChild(button)
+        button.addEventListener("click", function () {
+            removeFromCart(prod, buttonPressed)
+        });
+        newItem.appendChild(picture)
+    }
+</script>
+<script>//remove item from cart modal
+    function removeFromCart(prod, button) {
+        const removeMyChild = document.getElementById('prodID')
+        const element = document.getElementById(prod.prodID)
+        removeMyChild.removeChild(element)
+        button.disabled = false;
+        button.innerHTML = 'Add-To-Cart'
+        if (removeMyChild.childElementCount == 1){
+            removeMyChild.getElementsByTagName('h3')[0].innerHTML = 'Cart is empty.';
+        }
+    }
+</script>

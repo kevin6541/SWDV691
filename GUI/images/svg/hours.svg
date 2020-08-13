@@ -1,0 +1,8 @@
+
+<svg viewbox="0 0 984 686" width="983" height="685" xmlns="http://www.w3.org/2000/svg">
+    <rect x="34" y="279" rx="20" ry="20" width="915" height="381" stroke="#0F61B5" fill="transparent" stroke-width="50"/>
+    <text font-style="normal" fill="#0f61b5" stroke="#0F61B5" stroke-opacity="null" x="50" y="67" font-size="12" font-family="'arial'" text-anchor="start" transform="matrix(16, 0, 0, 19, -645, -715)">HOURS</text>
+    <circle cx="500" cy="52" r="40" stroke-width="20" fill="transparent" stroke="#0F61B5" id="svg_1"/>
+    <line x1="468" x2="308" y1="86" y2="287" stroke="#0F61B5" stroke-width="10" stroke-linejoin="bevel"/>
+    <line x1="528" x2="675" y1="80" y2="266" stroke="#0F61B5" stroke-width="10" stroke-linejoin="bevel"/>
+</svg>
