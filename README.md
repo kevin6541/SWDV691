@@ -4,4 +4,6 @@ This will be in addition to a web page I've been building for a local pharmacy. 
 
 The AWS folder contains the live/deployed files. The GUI folder contains the files that run on my local machine. The zip file of the database and api files are used to run the local GUI. Local GUI runs on MySQL. Live/deployed runs on DynamoDB.
 
-Still a work in progress.
+The capstone video shows the database, api's, and interface running on my local machine. Proof of concept if you will.
+
+Live/deployed is still a work in progress.
